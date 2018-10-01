@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<emails>
+    <email>
+        <receiver>jevsejen@gmail.com</receiver>
+        <subject>Some subject</subject>
+        <text>Hi this is test email sended by selenium</text>
+    </email>
+    <email>
+        <receiver>jevsejen@gmail.com</receiver>
+        <subject>Some subject2</subject>
+        <text>Hi this is test2 email sended by selenium</text>
+    </email>
+    <email>
+        <receiver>jevsejen@gmail.com</receiver>
+        <subject>Some subject3</subject>
+        <text>Hi this is test3 email sended by selenium</text>
+    </email>
+    <email>
+        <receiver>jevsejen@gmail.com</receiver>
+        <subject>Some subject4</subject>
+        <text>Hi this is test4 email sended by selenium</text>
+    </email>
+    <email>
+        <receiver>jevsejen@gmail.com</receiver>
+        <subject>Some subject5</subject>
+        <text>Hi this is test5 email sended by selenium</text>
+    </email>
+</emails>
