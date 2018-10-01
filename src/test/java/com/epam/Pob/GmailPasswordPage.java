@@ -22,13 +22,13 @@ public class GmailPasswordPage {
     }
 
     public void enterPassword(String password, WebDriver driver) {
-        log.info("Inputting password" + password);
+        log.info("Thread"+Thread.currentThread().getId()+" Inputting password" + password);
         passwordInput.sendKeys(password);
         waitForClickable(passwordNextBtn, driver);
     }
 
     public void clickingPasswordNextBtn() {
-        log.info("Clicking Next Button");
+        log.info("Thread"+Thread.currentThread().getId()+" Clicking Next Button");
         passwordNextBtn.click();
     }
 

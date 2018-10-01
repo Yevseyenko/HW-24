@@ -23,17 +23,17 @@ public class GmailLoginPage {
     }
 
     public void clickingingEmail() {
-        log.info("Choosing email button");
+        log.info("Thread"+Thread.currentThread().getId()+" Choosing email button");
         mailBtn.click();
     }
 
     public void enteringLogin(String login) {
-        log.info("Entering login" + login);
+        log.info("Thread"+Thread.currentThread().getId()+" Entering login" + login);
         emailInput.sendKeys(login);
     }
 
     public void clickingLoginNextBtn() {
-        log.info("Clicking next button");
+        log.info("Thread"+Thread.currentThread().getId()+" Clicking next button");
         nextLoginBtn.click();
     }
 }

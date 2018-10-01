@@ -46,7 +46,7 @@ public class GmailEmailPage {
 
 
     public void enteringEmail(String receiver, String subject, String text) {
-        log.info("Entering reciver " + receiver + " subject " + subject + " text " + text);
+        log.info("Thread"+Thread.currentThread().getId()+" Entering reciver " + receiver + " subject " + subject + " text " + text);
         receiverField.sendKeys(receiver);
         subjectField.sendKeys(subject);
         textMessage.sendKeys(text);
@@ -54,33 +54,33 @@ public class GmailEmailPage {
     }
 
     public void clickingWriteBtn() {
-        log.info("Clicking write button ");
+        log.info("Thread"+Thread.currentThread().getId()+" Clicking write button ");
         writeLetterBtn.click();
     }
 
     public void clickingMailBtn() {
-        log.info("Clicking mail button ");
+        log.info("Thread"+Thread.currentThread().getId()+" Clicking mail button ");
         mailBtn.click();
     }
 
     public void clickingEmailSendBtn() {
-        log.info("Clicking mail button ");
+        log.info("Thread"+Thread.currentThread().getId()+" Clicking mail button ");
         sendBtn.click();
     }
 
     public void gettingSent() {
-        log.info("Entering to sent folder");
+        log.info("Thread"+Thread.currentThread().getId()+" Entering to sent folder");
         input.sendKeys("in:sent" + Keys.ENTER);
     }
 
     public void enteringFirstLetter(WebDriver driver) {
-        log.info("Entering to first Letter");
+        log.info("Thread"+Thread.currentThread().getId()+"Entering to first Letter");
         waitForClickable(firstLetter, driver);
         firstLetter.click();
     }
 
     public void deletingDeliveredMessage(WebDriver driver) {
-        log.info("Deleting sent message");
+        log.info("Thread"+Thread.currentThread().getId()+" Deleting sent message");
         waitForVisibility(deleteBtn, driver);
         deleteBtn.click();
 
