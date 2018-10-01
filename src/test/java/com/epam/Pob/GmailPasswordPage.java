@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GmailPasswordPage {
-    private static final Logger log =LogManager.getLogger("log4j2");
+    private static final Logger log = LogManager.getLogger("log4j2");
     @FindBy(css = "input[name=\"password\"]")
     private WebElement passwordInput;
     @FindBy(id = "passwordNext")
@@ -22,7 +22,7 @@ public class GmailPasswordPage {
     }
 
     public void enterPassword(String password, WebDriver driver) {
-        log.info("Inputting password"+ password);
+        log.info("Inputting password" + password);
         passwordInput.sendKeys(password);
         waitForClickable(passwordNextBtn, driver);
     }

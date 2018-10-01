@@ -34,7 +34,7 @@ public class EmailParameters {
                 Node node = nList.item(temp);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) node;
-                    //Create new User Object
+                    //Create new Email Object
                     email = new Email();
                     email.setReceiver(eElement.getElementsByTagName("receiver").item(0).getTextContent());
                     email.setSubject(eElement.getElementsByTagName("subject").item(0).getTextContent());

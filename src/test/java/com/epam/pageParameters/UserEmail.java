@@ -7,9 +7,9 @@ import java.util.List;
 
 public class UserEmail {
     @DataProvider(name = "usersData", parallel = true)
-    public static Object[][] getUsersAndMessages()  {
-        UserParameters userParameters=new UserParameters();
-        EmailParameters emailParameters=new EmailParameters();
+    public static Object[][] getUsersAndMessages() {
+        UserParameters userParameters = new UserParameters();
+        EmailParameters emailParameters = new EmailParameters();
         return generateArray(userParameters.parseUserXML(), emailParameters.parseEmailXML());
     }
 

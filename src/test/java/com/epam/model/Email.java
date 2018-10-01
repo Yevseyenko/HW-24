@@ -8,10 +8,12 @@ public class Email {
     public String getReceiver() {
         return receiver;
     }
-    public String getText(){
+
+    public String getText() {
         return text;
     }
-    public String getSubject(){
+
+    public String getSubject() {
         return subject;
     }
 

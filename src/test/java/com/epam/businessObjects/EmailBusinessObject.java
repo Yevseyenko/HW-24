@@ -32,7 +32,7 @@ public class EmailBusinessObject {
 
     public void deletingSentLetter() {
         gmailEmailPage.deletingDeliveredMessage(driver);
-          }
+    }
 
     public String getSubject() {
         return gmailEmailPage.gettingSubject();

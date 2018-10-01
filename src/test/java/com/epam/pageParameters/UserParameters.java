@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserParameters {
-   public List<User> users =new ArrayList<>();
+    public List<User> users = new ArrayList<>();
     public User user;
     private static final Logger log = LogManager.getLogger("log4j2");
 
@@ -42,7 +42,7 @@ public class UserParameters {
                 }
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
-                  log.info(e.getMessage());
+            log.info(e.getMessage());
         }
         return users;
     }

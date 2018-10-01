@@ -11,5 +11,5 @@ public class Input extends Element {
     public void sendKeys(CharSequence... keys) {
         super.clear();
         super.sendKeys(keys);
-      }
+    }
 }

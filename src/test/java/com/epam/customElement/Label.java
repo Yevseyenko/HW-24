@@ -10,7 +10,7 @@ public class Label extends Element {
     @Override
     public String getText() {
         waitBeforeAction(3000);
-          return super.webElement.getText();
+        return super.webElement.getText();
     }
 
 }

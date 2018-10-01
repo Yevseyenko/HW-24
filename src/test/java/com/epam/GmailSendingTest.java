@@ -39,8 +39,9 @@ public class GmailSendingTest {
         Assert.assertTrue(emailBO.getTextEmail().equals(text));
         emailBO.deletingSentLetter();
     }
-@AfterMethod(alwaysRun = true)
-    public void tearDown(){
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
         DriverPool.quit();
-}
+    }
 }
