@@ -1,4 +1,4 @@
-package com.epam.Pob;
+package com.epam.businessLayer.pageObjects;
 
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;

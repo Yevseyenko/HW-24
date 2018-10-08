@@ -1,16 +1,22 @@
-package com.epam.pageParameters;
+package com.epam.dataproviders;
 
+
+
+import com.epam.util.parsers.XMLEmailParser;
+import com.epam.util.parsers.XMLUserParser;
 import org.testng.annotations.DataProvider;
 
 import java.util.List;
 
 
 public class UserEmail {
-    @DataProvider(name = "usersData", parallel = true)
+
+
+        @DataProvider(name = "usersData", parallel = true)
     public static Object[][] getUsersAndMessages() {
-        UserParameters userParameters = new UserParameters();
-        EmailParameters emailParameters = new EmailParameters();
-        return generateArray(userParameters.parseUserXML(), emailParameters.parseEmailXML());
+        XMLUserParser XMLUserParser = new XMLUserParser();
+        XMLEmailParser XMLEmailParser = new XMLEmailParser();
+        return generateArray(XMLUserParser.parseUserXML(), XMLEmailParser.parseEmailXML());
     }
 
 

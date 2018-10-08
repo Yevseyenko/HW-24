@@ -1,5 +1,7 @@
 package com.epam.model;
 
+import javax.security.auth.Subject;
+
 public class Email {
     private String subject;
     private String text;
@@ -27,5 +29,10 @@ public class Email {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return receiver+" "+subject+" "+text;
     }
 }

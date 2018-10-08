@@ -1,7 +1,7 @@
-package com.epam.businessObjects;
+package com.epam.businessLayer.businessObjects;
 
-import com.epam.Pob.GmailLoginPage;
-import com.epam.Pob.GmailPasswordPage;
+import com.epam.businessLayer.pageObjects.GmailLoginPage;
+import com.epam.businessLayer.pageObjects.GmailPasswordPage;
 import org.openqa.selenium.WebDriver;
 
 public class LoginBusinessObject {

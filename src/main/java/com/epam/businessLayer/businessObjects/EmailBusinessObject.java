@@ -1,8 +1,7 @@
-package com.epam.businessObjects;
+package com.epam.businessLayer.businessObjects;
 
-import com.epam.Pob.GmailEmailPage;
+import com.epam.businessLayer.pageObjects.GmailEmailPage;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class EmailBusinessObject {
 
@@ -16,21 +15,19 @@ public class EmailBusinessObject {
 
     }
 
-    public void writingLetterAndSubmit(String reciver, String subject, String text) {
+    public void writeLetterAndSubmit(String reciver, String subject, String text) {
         gmailEmailPage.clickingMailBtn();
         gmailEmailPage.clickingWriteBtn();
         gmailEmailPage.enteringEmail(reciver, subject, text);
         gmailEmailPage.clickingEmailSendBtn();
     }
 
-    public void selectingSentLetter(String subject, String text) {
+    public void selectSentLetter(String subject, String text) {
         gmailEmailPage.gettingSent();
         gmailEmailPage.enteringFirstLetter(driver);
-        gmailEmailPage.verifyingSentLetter(subject, text);
-        Assert.assertEquals(subject, gmailEmailPage.gettingSubject());
     }
 
-    public void deletingSentLetter() {
+    public void deleteSentLetter() {
         gmailEmailPage.deletingDeliveredMessage(driver);
     }
 

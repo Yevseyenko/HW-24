@@ -1,9 +1,9 @@
 package com.epam;
 
 
-import com.epam.businessObjects.EmailBusinessObject;
-import com.epam.businessObjects.LoginBusinessObject;
-import com.epam.driverConfig.DriverPool;
+import com.epam.businessLayer.businessObjects.EmailBusinessObject;
+import com.epam.businessLayer.businessObjects.LoginBusinessObject;
+import com.epam.util.driverConfig.DriverPool;
 import com.epam.model.Email;
 import com.epam.model.User;
 import org.openqa.selenium.WebDriver;
@@ -12,17 +12,18 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static com.epam.pageParameters.UserEmail.getUsersAndMessages;
+
+import static com.epam.dataproviders.DataProviderXLS.getXLSUsersAndMessages;
 
 public class GmailSendingTest {
 
 
-    @DataProvider(name = "usersData", parallel = true)
+    @DataProvider(name = "usersXLSData", parallel = true)
     public Object[][] usersData() {
-        return getUsersAndMessages();
+        return getXLSUsersAndMessages();
     }
 
-    @Test(dataProvider = "usersData")
+    @Test(dataProvider = "usersXLSData")
     public void sendingEmail(User user, Email email) {
         String login = user.getLogin();
         String password = user.getPassword();
@@ -33,11 +34,11 @@ public class GmailSendingTest {
         LoginBusinessObject loginBO = new LoginBusinessObject(driver);
         EmailBusinessObject emailBO = new EmailBusinessObject(driver);
         loginBO.authorisationEmail(login, password);
-        emailBO.writingLetterAndSubmit(receiver, subject, text);
-        emailBO.selectingSentLetter(subject, text);
+        emailBO.writeLetterAndSubmit(receiver, subject, text);
+        emailBO.selectSentLetter(subject, text);
         Assert.assertTrue(emailBO.getSubject().equals(subject));
         Assert.assertTrue(emailBO.getTextEmail().equals(text));
-        emailBO.deletingSentLetter();
+        emailBO.deleteSentLetter();
     }
 
     @AfterMethod(alwaysRun = true)

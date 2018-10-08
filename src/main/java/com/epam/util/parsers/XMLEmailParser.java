@@ -1,4 +1,4 @@
-package com.epam.pageParameters;
+package com.epam.util.parsers;
 
 import com.epam.model.Email;
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmailParameters {
+public class XMLEmailParser {
     public List<Email> emails = new ArrayList<>();
     public Email email;
     private static final Logger log = LogManager.getLogger("log4j2");

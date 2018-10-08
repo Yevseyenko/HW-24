@@ -1,4 +1,4 @@
-package com.epam.driverConfig;
+package com.epam.util.driverConfig;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +13,8 @@ import static java.lang.Integer.parseInt;
 public class DriverConfiguration {
 
     private static final Logger log = LogManager.getLogger("log4j2");
-    WebDriver driver ;
+    WebDriver driver;
+
     public WebDriver configureDriver() {
         DriverParameters driverParameters = new DriverParameters();
 

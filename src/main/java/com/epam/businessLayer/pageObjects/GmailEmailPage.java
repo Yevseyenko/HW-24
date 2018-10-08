@@ -1,4 +1,4 @@
-package com.epam.Pob;
+package com.epam.businessLayer.pageObjects;
 
 
 import com.epam.customElement.Button;
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+
 
 public class GmailEmailPage {
     private static final Logger log = LogManager.getLogger("log4j2");
@@ -96,10 +96,6 @@ public class GmailEmailPage {
         new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void verifyingSentLetter(String subject, String text) {
-        Assert.assertEquals(subject, letterSubj.getText());
-        Assert.assertEquals(text, letterTxt.getText());
-    }
 
     public String gettingSubject() {
         return letterSubj.getText();
