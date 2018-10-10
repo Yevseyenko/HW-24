@@ -10,22 +10,22 @@ public class CustomListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        log.info("Test starts" + iTestResult.getTestName());
+        log.info("Test starts" + iTestResult.getMethod());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        log.info("Test is succesfull" + iTestResult.getTestName());
+        log.info("Test is succesfull" + iTestResult.getMethod());
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        log.info("Test failed" + iTestResult.getTestName());
+        log.info("Test failed" + iTestResult.getMethod());
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        log.info("Test skipped" + iTestResult.getTestName());
+        log.info("Test skipped" + iTestResult.getMethod());
     }
 
     @Override
