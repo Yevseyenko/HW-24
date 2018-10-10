@@ -3,7 +3,7 @@ package com.epam;
 
 import com.epam.businessLayer.businessObjects.EmailBusinessObject;
 import com.epam.businessLayer.businessObjects.LoginBusinessObject;
-import com.epam.util.driverConfig.DriverPool;
+import com.epam.utils.driverConfig.DriverPool;
 import com.epam.model.Email;
 import com.epam.model.User;
 import org.openqa.selenium.WebDriver;

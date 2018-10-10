@@ -1,14 +1,14 @@
 package com.epam.dataproviders;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import jxl.common.Logger;
+
 import org.testng.annotations.DataProvider;
 
-import static com.epam.util.parsers.CSVEmailParser.getEmailData;
-import static com.epam.util.parsers.CSVUserParser.getUserData;
+import static com.epam.utils.parsers.CSVEmailParser.getEmailData;
+import static com.epam.utils.parsers.CSVUserParser.getUserData;
 
 public class DataProviderCSV {
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log = Logger.getLogger(DataProviderCSV.class);
     @DataProvider(name = "usersCSVData", parallel = true)
     public static Object[][] getCSVUsersAndMessages() {
         Object [] users =getUserData();

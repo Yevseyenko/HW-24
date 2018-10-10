@@ -1,7 +1,8 @@
-package com.epam.util.driverConfig;
+package com.epam.utils.driverConfig;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,7 +10,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class DriverParameters {
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log = Logger.getLogger(DriverParameters.class);
     public String webdriver = "webdriver";
     public String delay = "delay";
     public String driverPath = "driverpath";

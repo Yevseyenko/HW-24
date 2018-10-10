@@ -1,8 +1,7 @@
-package com.epam.util.parsers;
+package com.epam.utils.parsers;
 
 import com.epam.model.User;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -20,7 +19,7 @@ import java.util.List;
 public class XMLUserParser {
     public List<User> users = new ArrayList<>();
     public User user;
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log = Logger.getLogger(XMLUserParser.class);
 
     public List<User> parseUserXML() {
         //Initialize a list of users

@@ -4,8 +4,7 @@ package com.epam.businessLayer.pageObjects;
 import com.epam.customElement.Button;
 import com.epam.customElement.Input;
 import com.epam.customElement.Label;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class GmailEmailPage {
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log = Logger.getLogger(GmailEmailPage.class);
     @FindBy(xpath = "//a[@data-pid='23']")
     private Button mailBtn;
     @FindBy(xpath = "//div[@gh='cm']")
@@ -46,44 +45,42 @@ public class GmailEmailPage {
 
 
     public void enteringEmail(String receiver, String subject, String text) {
-        log.info("Thread"+Thread.currentThread().getId()+" Entering reciver " + receiver + " subject " + subject + " text " + text);
+        log.info("Thread" + Thread.currentThread().getId() + " Entering reciver " + receiver + " subject " + subject + " text " + text);
         receiverField.sendKeys(receiver);
         subjectField.sendKeys(subject);
         textMessage.sendKeys(text);
-
     }
 
     public void clickingWriteBtn() {
-        log.info("Thread"+Thread.currentThread().getId()+" Clicking write button ");
+        log.info("Thread" + Thread.currentThread().getId() + " Clicking write button ");
         writeLetterBtn.click();
     }
 
     public void clickingMailBtn() {
-        log.info("Thread"+Thread.currentThread().getId()+" Clicking mail button ");
+        log.info("Thread" + Thread.currentThread().getId() + " Clicking mail button ");
         mailBtn.click();
     }
 
     public void clickingEmailSendBtn() {
-        log.info("Thread"+Thread.currentThread().getId()+" Clicking mail button ");
+        log.info("Thread" + Thread.currentThread().getId() + " Clicking mail button ");
         sendBtn.click();
     }
 
     public void gettingSent() {
-        log.info("Thread"+Thread.currentThread().getId()+" Entering to sent folder");
+        log.info("Thread" + Thread.currentThread().getId() + " Entering to sent folder");
         input.sendKeys("in:sent" + Keys.ENTER);
     }
 
     public void enteringFirstLetter(WebDriver driver) {
-        log.info("Thread"+Thread.currentThread().getId()+"Entering to first Letter");
+        log.info("Thread" + Thread.currentThread().getId() + "Entering to first Letter");
         waitForClickable(firstLetter, driver);
         firstLetter.click();
     }
 
     public void deletingDeliveredMessage(WebDriver driver) {
-        log.info("Thread"+Thread.currentThread().getId()+" Deleting sent message");
+        log.info("Thread" + Thread.currentThread().getId() + " Deleting sent message");
         waitForVisibility(deleteBtn, driver);
         deleteBtn.click();
-
     }
 
     private void waitForVisibility(WebElement element, WebDriver driver) throws Error {
@@ -95,7 +92,6 @@ public class GmailEmailPage {
     private void waitForClickable(WebElement element, WebDriver driver) {
         new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(element));
     }
-
 
     public String gettingSubject() {
         return letterSubj.getText();

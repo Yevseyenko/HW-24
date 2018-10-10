@@ -1,8 +1,9 @@
-package com.epam.util.parsers;
+package com.epam.utils.parsers;
 
 import com.epam.model.Email;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,10 +18,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class XMLEmailParser {
     public List<Email> emails = new ArrayList<>();
     public Email email;
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log = Logger.getLogger(XMLEmailParser.class);
 
     public List parseEmailXML() {
         //Initialize a list of users

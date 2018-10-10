@@ -26,6 +26,19 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
+                    </systemPropertyVariables>
+                    <properties>
+                        <property>
+                        <name>usedefaultlisteners</name>
+                        <value>false</value>
+                        </property>
+                        <property>
+                            <name>listener</name>
+                            <value>org.uncommons.reportng.HTMLReporter,com.framework.testng.SuiteListener</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
@@ -39,9 +52,9 @@
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.11.0</version>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -63,6 +76,28 @@
             <groupId>net.sourceforge.jexcelapi</groupId>
             <artifactId>jxl</artifactId>
             <version>2.6.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.1.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>velocity</groupId>
+            <artifactId>velocity-dep</artifactId>
+            <version>1.4</version>
         </dependency>
     </dependencies>
 

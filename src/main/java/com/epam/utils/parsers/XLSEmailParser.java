@@ -1,6 +1,6 @@
-package com.epam.util.parsers;
+package com.epam.utils.parsers;
 
-import com.epam.model.User;
+import com.epam.model.Email;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -9,11 +9,11 @@ import jxl.read.biff.BiffException;
 import java.io.File;
 import java.io.IOException;
 
-public class XLSUserParser {
-    private static String inputFile = "src/main/resources/emailPassword.xls";
+public class XLSEmailParser {
+    private static String inputFile = "src/main/resources/emailInfo.xls";
     private static Object[] data = new Object[5];
 
-    public static Object[] getXLSUser() {
+    public static Object[] getXLSEmail() {
         File inputWorkbook = new File(inputFile);
         Workbook w;
         try {
@@ -21,12 +21,14 @@ public class XLSUserParser {
             int i = 0;
             Sheet sheet = w.getSheet(0);
             for (int j = 1; j <= 5; j++) {
-                User user = new User();
+                Email email = new Email();
                 Cell cell = sheet.getCell(0, j);
-                user.setLogin(cell.getContents());
+                email.setReceiver(cell.getContents());
                 cell = sheet.getCell(1, j);
-                user.setPassword(cell.getContents());
-                data[i] = user;
+                email.setSubject(cell.getContents());
+                cell = sheet.getCell(2, j);
+                email.setText(cell.getContents());
+                data[i] = email;
                 i++;
             }
         } catch (BiffException | IOException e) {

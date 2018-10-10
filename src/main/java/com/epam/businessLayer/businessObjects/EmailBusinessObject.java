@@ -12,7 +12,6 @@ public class EmailBusinessObject {
     public EmailBusinessObject(WebDriver driver) {
         this.driver = driver;
         this.gmailEmailPage = new GmailEmailPage(driver);
-
     }
 
     public void writeLetterAndSubmit(String reciver, String subject, String text) {

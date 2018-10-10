@@ -2,8 +2,8 @@ package com.epam.dataproviders;
 
 
 
-import com.epam.util.parsers.XMLEmailParser;
-import com.epam.util.parsers.XMLUserParser;
+import com.epam.utils.parsers.XMLEmailParser;
+import com.epam.utils.parsers.XMLUserParser;
 import org.testng.annotations.DataProvider;
 
 import java.util.List;

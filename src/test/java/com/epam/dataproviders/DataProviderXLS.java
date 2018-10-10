@@ -1,14 +1,14 @@
 package com.epam.dataproviders;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.Logger;
 import org.testng.annotations.DataProvider;
 
-import static com.epam.util.parsers.XLSEmailParser.getXLSEmail;
-import static com.epam.util.parsers.XLSUserParser.getXLSUser;
+import static com.epam.utils.parsers.XLSEmailParser.getXLSEmail;
+import static com.epam.utils.parsers.XLSUserParser.getXLSUser;
 
 public class DataProviderXLS {
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log = Logger.getLogger(DataProviderXLS.class);
     @DataProvider(name = "usersXLSData", parallel = true)
     public static Object[][] getXLSUsersAndMessages() {
         Object [] users =getXLSUser();

@@ -1,8 +1,8 @@
 package com.epam.businessLayer.pageObjects;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GmailPasswordPage {
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log =Logger.getLogger(GmailPasswordPage.class);
     @FindBy(css = "input[name=\"password\"]")
     private WebElement passwordInput;
     @FindBy(id = "passwordNext")

@@ -1,9 +1,9 @@
-package com.epam.util.parsers;
+package com.epam.utils.parsers;
 
 import com.epam.model.Email;
 import com.opencsv.CSVReader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
+
 
 import java.io.IOException;
 import java.io.Reader;
@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class CSVEmailParser {
-    private static final Logger log = LogManager.getLogger("log4j2");
+    private static final Logger log = Logger.getLogger(CSVEmailParser.class);
     private static Email email;
     private static Object[] emailCSV = null;
     private static CSVReader csvReader = null;
