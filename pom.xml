@@ -29,16 +29,6 @@
                     <systemPropertyVariables>
                         <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
                     </systemPropertyVariables>
-                    <properties>
-                        <property>
-                        <name>usedefaultlisteners</name>
-                        <value>false</value>
-                        </property>
-                        <property>
-                            <name>listener</name>
-                            <value>org.uncommons.reportng.HTMLReporter,com.framework.testng.SuiteListener</value>
-                        </property>
-                    </properties>
                 </configuration>
             </plugin>
         </plugins>
