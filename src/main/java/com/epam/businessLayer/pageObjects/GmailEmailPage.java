@@ -26,8 +26,9 @@ public class GmailEmailPage {
     private Input subjectField;
     @FindBy(xpath = "//div[@role='textbox']")
     private WebElement textMessage;
-    @FindBy(xpath = "//table[@role='group']/tbody/tr/td/div/div[2][not(@aria-pressed) and not(@aria-hidden)]")
-    private Button sendBtn;
+   // @FindBy(xpath = "//table[@role='group']/tbody/tr/td/div/div[2][not(@aria-pressed) and not(@aria-hidden)]")
+   @FindBy(xpath = "//tr[@class='btC']/td/div/div[2]")
+   private WebElement sendBtn;
     @FindBy(xpath = "//input[@class='gb_bf']")
     private Input input;
     @FindBy(css = "tbody>tr.zA.yO:nth-child(1)")
@@ -45,40 +46,41 @@ public class GmailEmailPage {
 
 
     public void enteringEmail(String receiver, String subject, String text) {
-        log.info("Thread" + Thread.currentThread().getId() + " Entering reciver " + receiver + " subject " + subject + " text " + text);
+        log.info("Thread" + Thread.currentThread().getId() + " Enter reciver " + receiver + " subject " + subject + " text " + text);
         receiverField.sendKeys(receiver);
         subjectField.sendKeys(subject);
         textMessage.sendKeys(text);
     }
 
     public void clickingWriteBtn() {
-        log.info("Thread" + Thread.currentThread().getId() + " Clicking write button ");
+        log.info("Thread" + Thread.currentThread().getId() + " Click write button ");
         writeLetterBtn.click();
     }
 
     public void clickingMailBtn() {
-        log.info("Thread" + Thread.currentThread().getId() + " Clicking mail button ");
+        log.info("Thread" + Thread.currentThread().getId() + " Click mail button ");
         mailBtn.click();
     }
 
     public void clickingEmailSendBtn() {
-        log.info("Thread" + Thread.currentThread().getId() + " Clicking mail button ");
+
+        log.info("Thread" + Thread.currentThread().getId() + " Click mail button ");
         sendBtn.click();
     }
 
     public void gettingSent() {
-        log.info("Thread" + Thread.currentThread().getId() + " Entering to sent folder");
+        log.info("Thread" + Thread.currentThread().getId() + " Enter to sent folder");
         input.sendKeys("in:sent" + Keys.ENTER);
     }
 
     public void enteringFirstLetter(WebDriver driver) {
-        log.info("Thread" + Thread.currentThread().getId() + "Entering to first Letter");
+        log.info("Thread" + Thread.currentThread().getId() + "Enter to first Letter");
         waitForClickable(firstLetter, driver);
         firstLetter.click();
     }
 
     public void deletingDeliveredMessage(WebDriver driver) {
-        log.info("Thread" + Thread.currentThread().getId() + " Deleting sent message");
+        log.info("Thread" + Thread.currentThread().getId() + " Delete sent message");
         waitForVisibility(deleteBtn, driver);
         deleteBtn.click();
     }

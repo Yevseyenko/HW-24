@@ -3,15 +3,14 @@ package com.epam;
 
 import com.epam.businessLayer.businessObjects.EmailBusinessObject;
 import com.epam.businessLayer.businessObjects.LoginBusinessObject;
-import com.epam.utils.driverConfig.DriverPool;
 import com.epam.model.Email;
 import com.epam.model.User;
+import com.epam.utils.driverConfig.DriverPool;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 
 import static com.epam.dataproviders.DataProviderXLS.getXLSUsersAndMessages;
 
@@ -32,8 +31,8 @@ public class GmailSendingTest {
         String text = email.getText();
         WebDriver driver = DriverPool.getDriver();
         LoginBusinessObject loginBO = new LoginBusinessObject(driver);
-        EmailBusinessObject emailBO = new EmailBusinessObject(driver);
         loginBO.authorisationEmail(login, password);
+        EmailBusinessObject emailBO = new EmailBusinessObject(driver);
         emailBO.writeLetterAndSubmit(receiver, subject, text);
         emailBO.selectSentLetter(subject, text);
         Assert.assertTrue(emailBO.getSubject().equals(subject));

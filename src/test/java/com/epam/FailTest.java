@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 public class FailTest {
     private static final Logger log = Logger.getLogger(FailTest.class);
 
-    @Test
+    @Test(enabled=false)
     public void failTest() {
         log.info("Fail test");
 
