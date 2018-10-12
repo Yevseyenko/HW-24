@@ -12,6 +12,7 @@ public class DriverPool {
             DriverConfiguration config = new DriverConfiguration();
             WebDriver webDriver;
             webDriver = config.configureDriver();
+            webDriver.manage().window().maximize();
             return webDriver;
         }
     };
